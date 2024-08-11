@@ -1,0 +1,9 @@
+{
+  "quiz": [
+    {
+      "id": "f08b",
+      "amoutOfQuestions": 12,
+      "inlineRadioOptions": "medium"
+    }
+  ]
+}
