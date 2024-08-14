@@ -3,15 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { QuestionComponent } from './question/question.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import {provideHttpClient } from '@angular/common/http';
+import { QuestionsComponent } from './questions/questions.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionComponent
+    QuizComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,

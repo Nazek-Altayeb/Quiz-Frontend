@@ -2,14 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { catchError } from 'rxjs';
 import { QuizService } from '../quiz.service';
-import {Quiz} from './questionModel'
+import {Quiz} from './quiz'
 
 @Component({
-  selector: 'app-question',
-  templateUrl: './question.component.html',
-  styleUrl: './question.component.css'
+  selector: 'quiz',
+  templateUrl: './quiz.component.html',
+  styleUrl: './quiz.component.css'
 })
-export class QuestionComponent {
+export class QuizComponent {
 
   public quiz: Quiz;
   constructor(private quizService: QuizService){

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, elementAt, retry } from 'rxjs/operators';
-import { Quiz } from './question/questionModel';
-import { arrRemove } from 'rxjs/internal/util/arrRemove';
+import { Quiz } from './quiz/quiz';
+import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
+import { Question } from './questions/question';
 
 
 @Injectable({
@@ -16,9 +16,10 @@ export class QuizService {
   quizlength: any;
   response : any;
   lastObject: Quiz = new Quiz;
+  private apiUrl=environment.apiBaseUrl;
   constructor(private http: HttpClient) { }
   
-    addQuizdetails(quiz:Quiz){
+    public addQuizdetails(quiz:Quiz){
       let quizObject: Quiz[] =[];
       quizObject.push(quiz);
       this.deleteQuizDetails();
@@ -29,26 +30,26 @@ export class QuizService {
                 error =>{ console.log('Error', error);});     
 
       let lstObj = this.getLastObject()
-       console.log("last object" + lstObj);
+       console.log("last object" + lstObj); // print the last object in the db.json
 
       return newObject;
               
     } 
- 
-    getLastObject(){
+    /** (last object in the array of objects) the quiz details that should be sent to the backend */
+    public getLastObject(){
       this.http.get("http://localhost:3000/quiz").subscribe((response: any) => {
         let length = response.length
         console.log("length : " + length);
         let index = length-1;
-        this.lastObject = response[index.valueOf()]; // is returning an `Object` object  instead of the it's content
+        this.lastObject = response[index.valueOf()]; 
         console.log("last object: " + this.lastObject);
-        
+        return this.lastObject;  
        
       });
     }
 
-
-    deleteQuizDetails(){
+    /** suppose to clear the db.json file  */
+    public deleteQuizDetails(){
 
       this.http.get("http://localhost:3000/quiz").subscribe((response: any )=>{
         
@@ -60,11 +61,10 @@ export class QuizService {
             return this.filter((f: Quiz) => f != delElem) )};*/
             //console.log("response[element] : " + response[element.valueOf()]);
         }
-
       });
-      /** log the last object */
-      
       }
     
-    
+    public getAllQuestions(): Observable<Question[]>{
+          return this.http.get<Question[]>(`${this.apiUrl}/quiz/allQuestions`)
+    }
 }
