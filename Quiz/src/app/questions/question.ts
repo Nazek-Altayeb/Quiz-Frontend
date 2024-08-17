@@ -1,9 +1,8 @@
 export class Question {
     id: number;
-    amoutOfQuestions: number;
     category: string;
     difficulty: string;
     question: string;
-    answer: string;
-    options : string[];
+    correct_answer: string;
+    incorrect_answers : string[];
 }

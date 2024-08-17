@@ -53,6 +53,17 @@ body {
 
 #number-of-questions {
     margin-top: 0.5rem;
+    
+}
+#category{
+    margin-top: 0.5rem;
+    margin-left: 0.7rem;
+    margin-right: 0.1rem;
+    padding-right: 0.1rem;
+    width: 71%;
+}
+.category-label-width{
+    padding-right: 1.5rem;
 }
 
 #difficulty {
@@ -182,6 +193,9 @@ body {
     }
 
     #number-of-questions {
+        margin-top: 0px;
+    }
+    #category{
         margin-top: 0px;
     }
 

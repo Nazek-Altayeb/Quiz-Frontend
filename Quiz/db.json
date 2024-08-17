@@ -1,154 +1,22 @@
 {
   "quiz": [
     {
-      "id": "aded",
+      "difficulty": "medium",
+      "category": "Science &amp; Nature",
+      "question": "Which of the following is NOT a passive electrical component?",
+      "correct_answer": "Transistor",
+      "incorrect_answers": [
+        "Resistor",
+        "Capacitor",
+        "Inductor"
+      ],
+      "id": "675b"
+    },
+    {
+      "id": "3639",
       "amoutOfQuestions": 10,
-      "inlineRadioOptions": "hard"
-    },
-    {
-      "id": "5a55",
-      "amoutOfQuestions": 10,
-      "inlineRadioOptions": "easy"
-    },
-    {
-      "id": "dbc1",
-      "amoutOfQuestions": 10,
-      "inlineRadioOptions": "easy"
-    },
-    {
-      "id": "e974",
-      "amoutOfQuestions": 50,
+      "category": "General Knowledge",
       "inlineRadioOptions": "medium"
-    },
-    {
-      "id": "196b",
-      "amoutOfQuestions": 19,
-      "inlineRadioOptions": "easy"
-    },
-    {
-      "id": "34df",
-      "amoutOfQuestions": 91,
-      "inlineRadioOptions": "easy"
-    },
-    {
-      "id": "ffaf",
-      "amoutOfQuestions": 12,
-      "inlineRadioOptions": "hard"
-    },
-    {
-      "id": "1741",
-      "amoutOfQuestions": 15,
-      "inlineRadioOptions": "hard"
-    },
-    {
-      "id": "ff46",
-      "amoutOfQuestions": 56,
-      "inlineRadioOptions": "easy"
-    },
-    {
-      "id": "c17d",
-      "amoutOfQuestions": 46,
-      "inlineRadioOptions": "easy"
-    },
-    {
-      "id": "534d",
-      "amoutOfQuestions": 89,
-      "inlineRadioOptions": "medium"
-    },
-    {
-      "id": "165c",
-      "amoutOfQuestions": 89,
-      "inlineRadioOptions": "medium"
-    },
-    {
-      "id": "d6a4",
-      "amoutOfQuestions": 12,
-      "inlineRadioOptions": "hard"
-    },
-    {
-      "id": "aa80",
-      "amoutOfQuestions": 56,
-      "inlineRadioOptions": "hard"
-    },
-    {
-      "id": "bc63",
-      "amoutOfQuestions": 56,
-      "inlineRadioOptions": "hard"
-    },
-    {
-      "id": "b3ca",
-      "amoutOfQuestions": 20,
-      "inlineRadioOptions": "medium"
-    },
-    {
-      "id": "44ae",
-      "amoutOfQuestions": 20,
-      "inlineRadioOptions": "hard"
-    },
-    {
-      "id": "1b60",
-      "amoutOfQuestions": 50,
-      "inlineRadioOptions": "medium"
-    },
-    {
-      "id": "2dd9",
-      "amoutOfQuestions": 12,
-      "inlineRadioOptions": "medium"
-    },
-    {
-      "id": "94e3",
-      "amoutOfQuestions": 18,
-      "inlineRadioOptions": "easy"
-    },
-    {
-      "id": "215f",
-      "amoutOfQuestions": 10,
-      "inlineRadioOptions": "easy"
-    },
-    {
-      "id": "fbb1",
-      "amoutOfQuestions": 10,
-      "inlineRadioOptions": "medium"
-    },
-    {
-      "id": "b8fd",
-      "amoutOfQuestions": 12,
-      "inlineRadioOptions": "medium"
-    },
-    {
-      "id": "26f1",
-      "amoutOfQuestions": 10,
-      "inlineRadioOptions": "hard"
-    },
-    {
-      "id": "f215",
-      "amoutOfQuestions": 10,
-      "inlineRadioOptions": "medium"
-    },
-    {
-      "id": "bb5d",
-      "amoutOfQuestions": 10,
-      "inlineRadioOptions": "medium"
-    },
-    {
-      "id": "9ac9",
-      "amoutOfQuestions": 20,
-      "inlineRadioOptions": "hard"
-    },
-    {
-      "id": "991e",
-      "amoutOfQuestions": 20,
-      "inlineRadioOptions": "hard"
-    },
-    {
-      "id": "032a",
-      "amoutOfQuestions": 5,
-      "inlineRadioOptions": "easy"
-    },
-    {
-      "id": "2d2f",
-      "amoutOfQuestions": 10,
-      "inlineRadioOptions": "hard"
     }
   ]
 }

@@ -17,27 +17,28 @@ export class QuizService {
   response : any;
   lastObject: Quiz = new Quiz;
   private apiUrl=environment.apiBaseUrl;
+  private serverUrl=environment.serverurl;
   constructor(private http: HttpClient) { }
   
     public addQuizdetails(quiz:Quiz){
       let quizObject: Quiz[] =[];
       quizObject.push(quiz);
-      this.deleteQuizDetails();
+      // this.deleteQuizDetails();
       
 
-       let newObject =  this.http.post("http://localhost:3000/quiz", quiz).
+       let newObject =  this.http.post(`${this.serverUrl}/quiz`, quiz).
        subscribe(data => {console.log('Post request is successful', data)},
                 error =>{ console.log('Error', error);});     
 
-      let lstObj = this.getLastObject()
-       console.log("last object" + lstObj); // print the last object in the db.json
+      /*let lstObj = this.getLastObject()
+       console.log("last object" + lstObj); // print the last object in the db.json*/
 
       return newObject;
               
     } 
     /** (last object in the array of objects) the quiz details that should be sent to the backend */
     public getLastObject(){
-      this.http.get("http://localhost:3000/quiz").subscribe((response: any) => {
+      this.http.get(`${this.serverUrl}/quiz`).subscribe((response: any) => {
         let length = response.length
         console.log("length : " + length);
         let index = length-1;
@@ -51,7 +52,7 @@ export class QuizService {
     /** suppose to clear the db.json file  */
     public deleteQuizDetails(){
 
-      this.http.get("http://localhost:3000/quiz").subscribe((response: any )=>{
+      this.http.get(`${this.serverUrl}/quiz`).subscribe((response: any )=>{
         
         for( let element  in response){
             // delete response[element.valueOf()]; // the items are not being deleted !

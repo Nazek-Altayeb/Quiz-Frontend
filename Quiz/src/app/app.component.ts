@@ -9,23 +9,11 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   title = 'Quiz';
-  public questions: Question[];
 
-  constructor(private quizService: QuizService){}
-  ngOnInit(): void {
-    this.getAllQuestions();
-  }
+  constructor(){}
+  
 
-  public getAllQuestions(): void{
-    this.quizService.getAllQuestions().subscribe(
-      (response: Question[]) =>{
-        this.questions = response
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    )
-  }
+ 
 }
