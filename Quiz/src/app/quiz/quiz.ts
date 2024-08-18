@@ -1,6 +1,7 @@
 export class Quiz {
     id: number;
-    amoutOfQuestions:number;
-    category: string;
-    inlineRadioOptions:any; 
+    username: string;
+    amountOfQuestions:number;
+    category: number;
+    difficulty:any; 
 }
