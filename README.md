@@ -27,3 +27,103 @@ The backend available here: https://github.com/Nazek-Altayeb/Quiz
 * a different challenging questions.
 * ability to see the highest score for different users at the same level.
 
+### Design
+* The quiz area takes 70% of the page, centered in the middle of the page. 
+* UX is easy to understand and use.  
+
+### colors
+Milk White, white Smoke and Neutral Green are used as three basic colors for the quiz area, it's shadow and the background.
+the rest of the page remained white.
+
+### Typography 
+Basicly, Poppins is the font used and Sans-serif is the back-up font if Poppins fails to load.
+
+# Existing features
+
+
+### Fill in quiz form
+User will be asked to type in or Choose the following:
+- Name,
+- A number of questions,
+- Category,
+- Level of difficulty.
+
+Changing entries in the quiz form are not possible once the user click on 'start quiz' button.
+
+
+### Load quiz-data from API
+- Questions are loaded from the backend.
+
+
+### Stop Watch
+Approximately a minute is given for each question to be answered, submiting answers will be disabled even if the user didn't finish.
+
+### Score accumulation
+Scores are displayed in two cases, after user finishes answering all given questions, or when time is over.
+
+### Display alert messages
+- Incase user click on 'Submit answer' button without selecting an answer, an alert message will be displayed asking the user to select answer first.
+- In case the quiz is finished, the result message will be displayed
+
+### Display score
+- score will be displayed when either the user finishes answering all questions Or when time is over.
+
+### Dashboard
+- Working on it ......
+
+# Technologies
+## Language, Frameworks, Libraries and tools
+* Angular v18.1
+* rxjs
+* Bootstrap 5
+* Font Awesome
+* Github
+
+# Testing
+
+### Test Scenario
+
+*First case scenario:*
+- First, user fill in his/her (Name , amount of questions, difficulty level), filling in fields is mandatory
+- Press on 'start quiz' button
+- Second, the quiz area is displayed containing (Timer , Question counter, a question with four answer-options, two counters to accumulate the correct and incorrect answers).
+- Third, once the user select an answer, he should click on 'submit answer', then one of the counters (correct answer, incorrect answer) will be increased by 1.
+- when user answers all question with the given amount of time, the final score is displayed.
+- Finally, the user is given a choice to take the quiz again.
+
+*Second case scenario:*
+- The first three steps remain the same as the *First case scenario*
+- in case time is over while user is answering questions, the question area is freezed (no way to submit more answers) and the final score is displayed.
+- Finally, the user is given a choice to take the quiz again.
+
+### Validation
+
+1. W3C Markup Validator   To Do ....
+
+1. W3C CSS Validator   To Do ....
+
+1. Snyk Code    To Do
+
+### Performance 
+
+[Google Lighthouse](https://developers.google.com/web/tools/lighthouse/): To Do ....
+
+
+## Responsiveness
+
+To Do....
+
+* Devices:
+  * iPhone SE
+  * iPad Air
+  * iPad mini
+  * iPhone XR
+  * iPhone 12 Pro
+  * Galaxy Fold
+  * Surface Pro 7
+
+### Unresolved bugs
+
+
+
+
