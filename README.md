@@ -98,15 +98,19 @@ Scores are displayed in two cases, after user finishes answering all given quest
 
 ### Validation
 
-1. W3C Markup Validator   To Do ....
+1. W3C Markup Validator   
+To Do ....
 
-1. W3C CSS Validator   To Do ....
+1. W3C CSS Validator   
+To Do ....
 
-1. Snyk Code    To Do
+1. Snyk Code    
+To Do ....
 
 ### Performance 
 
-[Google Lighthouse](https://developers.google.com/web/tools/lighthouse/): To Do ....
+[Google Lighthouse](https://developers.google.com/web/tools/lighthouse/): 
+To Do ....
 
 
 ## Responsiveness
