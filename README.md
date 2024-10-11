@@ -82,12 +82,17 @@ I have followed the iterative approach, every unit of related tasks are grouped 
 - **Sprint 1**
     - [x] [User story: Setup environment] <code style="color:red">(Must have)</code>
     - [x] [User story: Add project Goal and User-Stories to the readme] <code style="color:#5319E7">(Should have)</code>
-    - [x] [User story: Add the global style] <code style="color:red">(Must have)</code></code>
-    - [x] [User story: Create Quiz component, create the quiz input form template, create the related style] <code style="color:red">(Must have)</code></code>
-    - [x] [User story: Create Question component, create the Questions area template, create the related style] <code style="color:red">(Must have)</code></code>
-    - [x] [User story: Create Service component, create methods to retrieve data from backend, and to send the user's details to the backend as well] <code style="color:red">(Must have)</code></code>
-    - [x] [User story: Use the Service methods in Quiz Component to load user's data to the Backend] <code style="color:red">(Must have)</code></code>
-    - [x] [User story: Use the Service methods in Question Component to load questions from the Backend] <code style="color:red">(Must have)</code></code>
+    - [x] [User story: Add the global style] <code style="color:red">(Must have)</code>
+    - [x] [User story: Create Quiz component, create the quiz input form , create the related style] <code style="color:red">(Must have)</code>
+    - [x] [User story: Create Question component, create the Questions area form, create the related style] <code style="color:red">(Must have)</code>
+    - [x] [User story: Create Service component, create methods to retrieve data from backend, and to send the user's details to the backend as well] <code style="color:red">(Must have)</code>
+    - [x] [User story: Use the Service methods in Quiz Component to load user's data to the Backend] <code style="color:red">(Must have)</code>
+    - [x] [User story: Use the Service methods in Question Component to load questions from the Backend] <code style="color:red">(Must have)</code>
+
+- **Sprint 2**
+    - [x] [User story: Display questions in sequence, each in a frame of time] <code style="color:red">(Must have)</code>
+    - [x] [User story: Setup timers and Intervals] <code style="color:red">(Must have)</code>
+    - [x] [User story: Accumulate the score] <code style="color:red">(Must have)</code>
 
 
 # Technologies
