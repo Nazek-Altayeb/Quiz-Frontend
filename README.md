@@ -70,6 +70,19 @@ Scores are displayed in two cases, after user finishes answering all given quest
 
 ### Dashboard
 - Working on it ......
+# Sytem design
+The Database for this project is a relational DB, consists of two tables sofar (Quiz, Question).
+The backend has been developed using the Spring boot Framework. The ERD and the API functionalities are clearly expressed here in the [Backend](https://github.com/Nazek-Altayeb/Quiz) project.
+
+# Development
+I have organized the development process by dividing the required functionalities into small tasks.
+The tasks are prioritized according to `MOSCOW`.
+I have followed the iterative approach, every unit of related tasks are grouped in one `Sprint`.
+
+- **Sprint 1 **
+    - [x] [User story: Setup environment] <code style="color:red">(Must have)</code>
+    - [x] [User story: Add project Goal and User-Stories to the readme] <code style="color:#5319E7">(Should have)</code>
+    - [x] [User story: Add navigation bar] <code style="color:red">(Must have)</code></code>
 
 # Technologies
 ## Language, Frameworks, Libraries and tools
