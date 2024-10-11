@@ -79,7 +79,7 @@ I have organized the development process by dividing the required functionalitie
 The tasks are prioritized according to `MOSCOW`.
 I have followed the iterative approach, every unit of related tasks are grouped in one `Sprint`.
 
-- **Sprint 1 **
+- **Sprint 1**
     - [x] [User story: Setup environment] <code style="color:red">(Must have)</code>
     - [x] [User story: Add project Goal and User-Stories to the readme] <code style="color:#5319E7">(Should have)</code>
     - [x] [User story: Add navigation bar] <code style="color:red">(Must have)</code></code>
