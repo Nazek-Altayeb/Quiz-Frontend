@@ -90,9 +90,9 @@ I have followed the iterative approach, every unit of related tasks are grouped 
     - [x] [User story: Use the Service methods in Question Component to load questions from the Backend] <code style="color:red">(Must have)</code>
 
 - **Sprint 2**
-    - [x] [User story: Display questions in sequence, each in a frame of time] <code style="color:red">(Must have)</code>
-    - [x] [User story: Setup timers and Intervals] <code style="color:red">(Must have)</code>
-    - [x] [User story: Accumulate the score] <code style="color:red">(Must have)</code>
+    - [] [User story: Display questions in sequence, each in a frame of time] <code style="color:red">(Must have)</code>
+    - [] [User story: Setup timers and Intervals] <code style="color:red">(Must have)</code>
+    - [] [User story: Accumulate the score] <code style="color:red">(Must have)</code>
 
 
 # Technologies
