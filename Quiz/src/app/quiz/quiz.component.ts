@@ -1,8 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, Injectable, Renderer2 } from '@angular/core';
+import { Component, ComponentFactory, ComponentFactoryResolver, Injectable, Renderer2, ViewContainerRef } from '@angular/core';
 import { QuizService } from '../quiz.service';
 import {Question} from '../questions/question';
 import {Quiz} from './quiz';
+import { QuestionsComponent } from '../questions/questions.component';
 
 
 @Component({
@@ -15,19 +16,24 @@ export class QuizComponent {
   public quiz: Quiz;
   public category: string = " ";
   questions_answers_area: any;
-  constructor(private quizService: QuizService){
+  //showQuestionsArea : boolean=false;
+  constructor(private quizService: QuizService, private viewContainer: ViewContainerRef){
     this.quiz = new Quiz();
     
     console.log(this.questions_answers_area);
+    // quizService.deletePreviousQuestionsSet();
 
   }
   onQuizCreate(quiz:Quiz){
     console.log(quiz);
-    this.quizService.addQuizdetails(quiz);   
+    this.quizService.postQuizdetails(quiz);   
     this.quizService.sendClickEvent(); 
   
   }
-
+  startQuiz(){
+    //this.showQuestionsArea = true;
+    this.viewContainer.createComponent(QuestionsComponent);
+  }
   
  
 }

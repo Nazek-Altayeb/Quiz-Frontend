@@ -15,7 +15,6 @@ export class QuizService {
   response : any;
   lastObject: Quiz = new Quiz;
   private apiUrl=environment.apiBaseUrl;
-  private serverUrl=environment.serverurl;
 
   constructor(private http: HttpClient) { }
 
@@ -31,29 +30,17 @@ export class QuizService {
   }
 
 
-  public addQuizdetails(quiz:Quiz){
+  public postQuizdetails(quiz:Quiz){
 
-      let newObject =  this.http.post(`${this.serverUrl}/quiz`, quiz).
-      subscribe(data => {console.log('Post request is successful', data)},
-              error =>{ console.log('Error', error);});     
-
-
-    return newObject;
+    this.http.post(`${this.apiUrl}/quiz/quizDetails`, quiz).subscribe((data: any) => {
+      console.log(data);
+   });
             
   } 
-  /** (last object in the array of objects) the quiz details that should be sent to the backend */
-  public getLastObject(){
-    this.http.get(`${this.serverUrl}/quiz`).subscribe((response: any) => {
-      let length = response.length
-      console.log("length : " + length);
-      let index = length-1;
-      this.lastObject = response[index.valueOf()]; 
-      console.log("last object: " + this.lastObject);
-      return this.lastObject;  
-      
-    });
-  }
 
+  /*public deletePreviousQuestionsSet(){
+    this.http.delete(`${this.apiUrl}/quiz/DeleteAllQuestion`)
+  }*/
 
   public getAllQuestions(): Observable<Question[]>{
        

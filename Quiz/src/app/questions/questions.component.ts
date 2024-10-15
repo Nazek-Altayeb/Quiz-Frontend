@@ -23,9 +23,7 @@ export class QuestionsComponent implements OnInit{
     })
   }
   ngOnInit(): void {
-    
-    // setTimeout(() => {this.getAllQuestions()}, 10000);
-    //this.getAllQuestions();
+    this.getAllQuestions();
   }
   public getAllQuestions(): void{
     this.quizService.getAllQuestions().subscribe(
