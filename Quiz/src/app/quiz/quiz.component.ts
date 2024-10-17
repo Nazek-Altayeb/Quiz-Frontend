@@ -16,12 +16,10 @@ export class QuizComponent {
   public quiz: Quiz;
   public category: string = " ";
   questions_answers_area: any;
-  //showQuestionsArea : boolean=false;
   constructor(private quizService: QuizService, private viewContainer: ViewContainerRef){
     this.quiz = new Quiz();
     
     console.log(this.questions_answers_area);
-    // quizService.deletePreviousQuestionsSet();
 
   }
   onQuizCreate(quiz:Quiz){
@@ -31,7 +29,6 @@ export class QuizComponent {
   
   }
   startQuiz(){
-    //this.showQuestionsArea = true;
     this.viewContainer.createComponent(QuestionsComponent);
   }
   

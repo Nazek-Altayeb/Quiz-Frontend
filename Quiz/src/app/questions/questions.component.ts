@@ -18,9 +18,9 @@ export class QuestionsComponent implements OnInit{
   public category: string = " ";
   clickEventSubscription:Subscription;
   constructor(private quizService: QuizService) {
-    this.clickEventSubscription= this.quizService.getClickEvent().subscribe(()=>{
+    /*this.clickEventSubscription= this.quizService.getClickEvent().subscribe(()=>{
       this.getAllQuestions();
-    })
+    })*/
   }
   ngOnInit(): void {
     this.getAllQuestions();
@@ -29,7 +29,7 @@ export class QuestionsComponent implements OnInit{
     this.quizService.getAllQuestions().subscribe(
       (response: Question[]) =>{
         this.questions = response
-        this.category = this.questions[0].category.toString();
+        // this.category = this.questions[0].category.toString();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

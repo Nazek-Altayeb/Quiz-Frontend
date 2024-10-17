@@ -86,8 +86,8 @@ I have followed the iterative approach, every unit of related tasks are grouped 
     - [x] [User story: Create Quiz component, create the quiz input form , create the related style] <code style="color:red">(Must have)</code>
     - [x] [User story: Create Question component, create the Questions area form, create the related style] <code style="color:red">(Must have)</code>
     - [x] [User story: Create Service component, create methods to retrieve data from backend, and to send the user's details to the backend as well] <code style="color:red">(Must have)</code>
-    - [x] [User story: Use the Service methods in Quiz Component to load user's data to the Backend] <code style="color:red">(Must have)</code>
-    - [x] [User story: Use the Service methods in Question Component to load questions from the Backend] <code style="color:red">(Must have)</code>
+    - [x] [User story: Use the Service methods in Quiz Component to upload user's data to the Backend] <code style="color:red">(Must have)</code>
+    - [x] [User story: Use the Service methods in Question Component to download questions from the Backend] <code style="color:red">(Must have)</code>
 
 - **Sprint 2**
     - [] [User story: Display questions in sequence, each in a frame of time] <code style="color:red">(Must have)</code>
