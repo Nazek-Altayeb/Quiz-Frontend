@@ -14,7 +14,9 @@ export class AppComponent{
   title = 'Quiz';
   @ViewChild(QuestionsComponent) questionComponent: QuestionsComponent;
 
-  constructor(){}
+  constructor(private quizService: QuizService){
+    quizService.deleteCache();
+  }
   
 
  

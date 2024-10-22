@@ -24,8 +24,10 @@ export class QuizComponent {
   }
   onQuizCreate(quiz:Quiz){
     console.log(quiz);
+    this.quizService.deleteCache();
     this.quizService.postQuizdetails(quiz);   
     this.quizService.sendClickEvent(); 
+    this.category = quiz.category.toString();
   
   }
   startQuiz(){

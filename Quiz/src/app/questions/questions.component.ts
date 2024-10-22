@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, Input } from '@angular/core';
 import { QuizService } from '../quiz.service';
 import { Question } from './question';
 import { Subscription } from 'rxjs';
@@ -15,7 +15,9 @@ import { Subscription } from 'rxjs';
 export class QuestionsComponent implements OnInit{
 
   public questions: Question[];
-  public category: string = " ";
+  // public category: string = " ";
+  @Input()category: string='';
+
   clickEventSubscription:Subscription;
   constructor(private quizService: QuizService) {
     /*this.clickEventSubscription= this.quizService.getClickEvent().subscribe(()=>{
@@ -29,7 +31,7 @@ export class QuestionsComponent implements OnInit{
     this.quizService.getAllQuestions().subscribe(
       (response: Question[]) =>{
         this.questions = response
-        // this.category = this.questions[0].category.toString();
+        this.category = this.category.toString();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

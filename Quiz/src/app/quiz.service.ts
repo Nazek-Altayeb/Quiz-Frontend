@@ -42,6 +42,10 @@ export class QuizService {
     this.http.delete(`${this.apiUrl}/quiz/DeleteAllQuestion`)
   }*/
 
+  public deleteCache(){
+    return this.http.delete(`${this.apiUrl}/quiz/DeleteAllQuestion`);
+  }
+
   public getAllQuestions(): Observable<Question[]>{
        
          return this.http.get<Question[]>(`${this.apiUrl}/quiz/allQuestions`)
