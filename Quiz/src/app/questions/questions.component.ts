@@ -2,7 +2,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Injectable, OnInit, Input } from '@angular/core';
 import { QuizService } from '../quiz.service';
 import { Question } from './question';
-import { Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'any',
@@ -14,19 +13,16 @@ import { Subscription } from 'rxjs';
 })
 export class QuestionsComponent implements OnInit{
 
-  public questions: Question[];
-  // public category: string = " ";
+  public questions: Question[] | undefined;
   @Input()category: string='';
 
-  clickEventSubscription:Subscription;
-  constructor(private quizService: QuizService) {
-    /*this.clickEventSubscription= this.quizService.getClickEvent().subscribe(()=>{
-      this.getAllQuestions();
-    })*/
-  }
+  
+  constructor(private quizService: QuizService) {  }
+
   ngOnInit(): void {
     this.getAllQuestions();
   }
+
   public getAllQuestions(): void{
     this.quizService.getAllQuestions().subscribe(
       (response: Question[]) =>{

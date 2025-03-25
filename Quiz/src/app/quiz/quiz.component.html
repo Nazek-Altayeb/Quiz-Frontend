@@ -28,10 +28,10 @@
                     <ul>
                         <li>Kindly fill in the aside form, all inputs are required and at least 5 questions should
                             be taken in the quiz</li>
-                        <li>Note that Filling in info in the aside form can be only once</li>
-                        <li>A specific time will be given, spending more that one minute on each question
-                            could result in not being able to finalize the test</li>
-                        <li>Your score will be displayed once time is over Or all questions are answered</li>
+                        <li>Save your selections before starting the Quiz</li>
+                        <li>Every question will be given one minute, 
+                            spending more than a minute in an answer could result in not completing the quiz </li>
+                        <li>Your score will be displayed once time is over Or after completing the Quiz</li>
                     </ul>
                 </div>
             </div>
@@ -95,20 +95,14 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn SaveDetails" id="start-quiz-button" value="save">Save</button>
+                        <button   id="start-quiz-button" class="btn  SaveDetails " (click)="startQuiz()">Start quiz</button>
+                        <button type="submit" class="btn me-1 SaveDetails " id="start-quiz-button" value="save">Save</button>
+                       
                     </form>
                 </div>
             </div>
             <br>
           
-        </div>
-        <div class="row">
-            <div class="card border-0 col-6">
-                <div class="card-body">
-                    <p class="card-text">If ready, please press the button and start quiz. Once clicking, the counter will start counting down</p>
-                    <button   id="start-quiz-button" (click)="startQuiz()">Start quiz</button>
-                </div>
-            </div>
         </div>
         <questions  [category] = "category">
            
