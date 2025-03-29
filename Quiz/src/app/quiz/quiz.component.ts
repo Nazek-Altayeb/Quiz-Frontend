@@ -4,6 +4,7 @@ import { QuizService } from '../quiz.service';
 import {Question} from '../questions/question';
 import {Quiz} from './quiz';
 import { QuestionsComponent } from '../questions/questions.component';
+import { Block } from '@angular/compiler';
 
 
 @Component({
@@ -32,6 +33,7 @@ export class QuizComponent {
   }
   startQuiz(){
     this.viewContainer.createComponent(QuestionsComponent);
+   
   }
   
  

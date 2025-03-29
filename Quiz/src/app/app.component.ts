@@ -4,18 +4,22 @@ import { Question } from './questions/question';
 import { QuizService } from './quiz.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { QuestionsComponent } from './questions/questions.component';
+import {RouterModule} from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
-export class AppComponent{
-  title = 'Quiz';
-  @ViewChild(QuestionsComponent) questionComponent: QuestionsComponent;
+export class AppComponent implements OnInit{
+  // title = 'Quiz';
+   // @ViewChild(QuestionsComponent) questionComponent: QuestionsComponent;
+  showQuestionsAndAnswersArea: boolean = false;
+  constructor(){}
 
-  constructor(private quizService: QuizService){
-    quizService.deleteCache();
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
   
 

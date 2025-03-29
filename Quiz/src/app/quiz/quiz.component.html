@@ -95,7 +95,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button   id="start-quiz-button" class="btn  SaveDetails " (click)="startQuiz()">Start quiz</button>
+                        <button   id="start-quiz-button" class="btn  SaveDetails " (click)="startQuiz()" routerLink="/test">Start quiz</button>
                         <button type="submit" class="btn me-1 SaveDetails " id="start-quiz-button" value="save">Save</button>
                        
                     </form>
@@ -104,11 +104,12 @@
             <br>
           
         </div>
-        <questions  [category] = "category">
-           
-        </questions>
+
         
     </div>
   </div>
+
+  
+ 
 
   
