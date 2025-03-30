@@ -1,10 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, ComponentFactory, ComponentFactoryResolver, Injectable, Renderer2, ViewContainerRef } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
 import { QuizService } from '../quiz.service';
-import {Question} from '../questions/question';
 import {Quiz} from './quiz';
 import { QuestionsComponent } from '../questions/questions.component';
-import { Block } from '@angular/compiler';
 
 
 @Component({
@@ -25,9 +23,7 @@ export class QuizComponent {
   }
   onQuizCreate(quiz:Quiz){
     console.log(quiz);
-    this.quizService.deleteCache();
     this.quizService.postQuizdetails(quiz);   
-    this.quizService.sendClickEvent(); 
     this.category = quiz.category.toString();
   
   }

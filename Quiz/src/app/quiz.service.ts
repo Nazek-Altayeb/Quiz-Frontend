@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Quiz } from './quiz/quiz';
-import { Observable, Subject } from 'rxjs';
+import { Observable} from 'rxjs';
 import { environment } from '../environments/environment';
 import { Question } from './questions/question';
 
@@ -18,17 +18,6 @@ export class QuizService {
 
   constructor(private http: HttpClient) { }
 
-  private subject = new Subject<any>();
-
-  sendClickEvent(){
-    this.subject.next('');
-
-  }
-
-  getClickEvent():Observable<any>{
-     return this.subject.asObservable();
-  }
-
 
   public postQuizdetails(quiz:Quiz){
 
@@ -38,13 +27,6 @@ export class QuizService {
             
   } 
 
-  /*public deletePreviousQuestionsSet(){
-    this.http.delete(`${this.apiUrl}/quiz/DeleteAllQuestion`)
-  }*/
-
-  public deleteCache(){
-    return this.http.delete(`${this.apiUrl}/quiz/DeleteAllQuestion`);
-  }
 
   public getAllQuestions(): Observable<Question[]>{
        
