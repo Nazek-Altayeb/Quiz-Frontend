@@ -1,7 +1,7 @@
 export class Quiz {
     id: number;
     username: string;
-    amountOfQuestions:number;
-    category: number;
+    amountOfQuestions:any;
+    category: any;
     difficulty:any; 
 }
