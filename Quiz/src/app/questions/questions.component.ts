@@ -27,7 +27,7 @@ export class QuestionsComponent implements OnInit{
 
   ngOnInit(): void {
     this.getAllQuestions();
-    this.startStopWatch();
+    this.startTimer();
     this.category = this.quizService.getCategory();
     this.amountOfQuestions = this.quizService.getAmountOfQuestions();
   }
@@ -44,7 +44,7 @@ export class QuestionsComponent implements OnInit{
     
   }
 
-  public startStopWatch(): void{
+  public startTimer(): void{
     this.amountOfQuestions = this.quizService.getAmountOfQuestions();
       
     this.intervalId = setInterval(() => {
