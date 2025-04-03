@@ -19,20 +19,22 @@ export class QuestionsComponent implements OnInit{
   public category:any;
   public intervalId : any;
   public quizDuration :any;
-  public minutes : any;
-  public seconds : any;  
+  public minutes : any ='0'+0;
+  public seconds : any='0'+0; 
   public countDown: any;
   public countDownTimer:any;
+  public timer:any;
 
   
   constructor(private quizService: QuizService) {  }
 
   ngOnInit(): void {
     this.getAllQuestions();
-    this.startCountDown();
-    this.setInterval();
+    // this.startCountDown();
+    this.startStopWatch();
     this.category = this.quizService.getCategory();
     this.amountOfQuestions = this.quizService.getAmountOfQuestions();
+    // console.log("amountOfQuestions :" +this.amountOfQuestions)
   }
 
   public getAllQuestions(): void{
@@ -47,28 +49,19 @@ export class QuestionsComponent implements OnInit{
     
   }
 
-  public startCountDown(){
-    this.countDown = () => {
-
-      this.quizDuration = this.amountOfQuestions*60;   
-      this.minutes = Math.floor(this.quizDuration / 60);
-      this.seconds = this.quizDuration % 60;
-  
-       this.countDownTimer = document.querySelector('#count-down-timer');
-      if(this.countDownTimer)
-      {
-        this.countDownTimer.textContent = `${this.minutes}` +':'+ `${this.seconds}`;
-      }
-      this.quizDuration--;
-    };
-    console.log(" minutes :"+this.minutes)
-    console.log("seconds :"+this.seconds)
-    console.log("quiz duration :" +this.quizDuration)
-  }
-
-  public setInterval(){
+  public startStopWatch(): void{
+    this.amountOfQuestions = this.quizService.getAmountOfQuestions();
+      
     this.intervalId = setInterval(() => {
-      this.countDown;
+      this.seconds++;
+      this.seconds = this.seconds < 10 ? '0' + this.seconds : this.seconds;
+      
+      if(this.seconds == 60){
+        this.minutes++;
+        this.minutes = this.minutes < 10 ? '0' + this.minutes : this.minutes;
+        this.seconds = '0'+ 0;
+      }
+
     }, 1000);
   }
 
