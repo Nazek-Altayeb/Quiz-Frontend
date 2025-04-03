@@ -21,20 +21,15 @@ export class QuestionsComponent implements OnInit{
   public quizDuration :any;
   public minutes : any ='0'+0;
   public seconds : any='0'+0; 
-  public countDown: any;
-  public countDownTimer:any;
-  public timer:any;
 
   
   constructor(private quizService: QuizService) {  }
 
   ngOnInit(): void {
     this.getAllQuestions();
-    // this.startCountDown();
     this.startStopWatch();
     this.category = this.quizService.getCategory();
     this.amountOfQuestions = this.quizService.getAmountOfQuestions();
-    // console.log("amountOfQuestions :" +this.amountOfQuestions)
   }
 
   public getAllQuestions(): void{
@@ -65,9 +60,7 @@ export class QuestionsComponent implements OnInit{
     }, 1000);
   }
 
-  
-
-  public stopCountDown() {
+  public stopTimer() {
     clearInterval(this.intervalId);
   }
 
