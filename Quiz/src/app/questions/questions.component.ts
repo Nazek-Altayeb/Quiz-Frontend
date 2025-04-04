@@ -15,12 +15,12 @@ export class QuestionsComponent implements OnInit{
 
   public questions: Question[] | undefined;
  
-  public amountOfQuestions: number= 0;
+  public amountOfQuestions: any;
   public category:any;
   public intervalId : any;
-  public quizDuration :any;
   public minutes : any ='0'+0;
   public seconds : any='0'+0; 
+  public quizDuration : number= 0;
 
   
   constructor(private quizService: QuizService) {  }
@@ -48,20 +48,30 @@ export class QuestionsComponent implements OnInit{
     this.amountOfQuestions = this.quizService.getAmountOfQuestions();
       
     this.intervalId = setInterval(() => {
+      this.checkIfTimeEnds(); 
       this.seconds++;
       this.seconds = this.seconds < 10 ? '0' + this.seconds : this.seconds;
       
-      if(this.seconds == 60){
-        this.minutes++;
+      if(this.seconds == 60){  
+            
+        this.minutes++;  
+        this.quizDuration = this.minutes;            
         this.minutes = this.minutes < 10 ? '0' + this.minutes : this.minutes;
         this.seconds = '0'+ 0;
-      }
+      }    
 
     }, 1000);
   }
 
   public stopTimer() {
-    clearInterval(this.intervalId);
+      clearInterval(this.intervalId); 
+  }
+
+  public checkIfTimeEnds(){
+    //this.amountOfQuestions = this.quizService.getAmountOfQuestions();
+    if(this.amountOfQuestions == this.quizDuration){
+      this.stopTimer();
+    }
   }
 
 }
