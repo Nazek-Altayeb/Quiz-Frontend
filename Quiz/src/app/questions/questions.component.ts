@@ -41,19 +41,15 @@ export class QuestionsComponent implements OnInit{
         alert(error.message);
       }
     )    
-    
   }
 
   public startTimer(): void{
-    this.amountOfQuestions = this.quizService.getAmountOfQuestions();
-      
     this.intervalId = setInterval(() => {
       this.checkIfTimeEnds(); 
       this.seconds++;
       this.seconds = this.seconds < 10 ? '0' + this.seconds : this.seconds;
       
-      if(this.seconds == 60){  
-            
+      if(this.seconds == 60){              
         this.minutes++;  
         this.quizDuration = this.minutes;            
         this.minutes = this.minutes < 10 ? '0' + this.minutes : this.minutes;
@@ -68,7 +64,6 @@ export class QuestionsComponent implements OnInit{
   }
 
   public checkIfTimeEnds(){
-    //this.amountOfQuestions = this.quizService.getAmountOfQuestions();
     if(this.amountOfQuestions == this.quizDuration){
       this.stopTimer();
     }
