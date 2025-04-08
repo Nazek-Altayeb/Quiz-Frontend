@@ -14,7 +14,6 @@ import { Question } from './question';
 export class QuestionsComponent implements OnInit{
 
   public questions: Question[] | undefined;
- 
   public amountOfQuestions: any;
   public category:any;
   public intervalId : any;
@@ -29,6 +28,7 @@ export class QuestionsComponent implements OnInit{
     this.getAllQuestions();
     this.startTimer();
     this.category = this.quizService.getCategory();
+    // console.log(" this.category : " +  this.category);
     this.amountOfQuestions = this.quizService.getAmountOfQuestions();
   }
 

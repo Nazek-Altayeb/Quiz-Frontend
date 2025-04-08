@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Quiz } from './quiz/quiz';
-import { BehaviorSubject, Observable} from 'rxjs';
+import { Observable} from 'rxjs';
 import { environment } from '../environments/environment';
 import { Question } from './questions/question';
+import { categoriesDictionary } from './categoriesDictionary';
 
 
 @Injectable({
@@ -14,8 +15,7 @@ export class QuizService {
   response : any;
   quiz: Quiz = new Quiz;
   private apiUrl=environment.apiBaseUrl;
-
-  private category : any;
+  public category : any;
   private amountOfQuestions: any;
 
   public quizDetails: Quiz = new Quiz;
@@ -35,7 +35,7 @@ export class QuizService {
   }
 
   public setCategory(quiz:Quiz){
-    this.category = quiz.category;
+    this.category = categoriesDictionary.get(quiz.category)
   }
 
   public getCategory(){

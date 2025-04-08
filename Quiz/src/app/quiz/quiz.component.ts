@@ -3,6 +3,7 @@ import { Component, Output, ViewContainerRef } from '@angular/core';
 import { QuizService } from '../quiz.service';
 import {Quiz} from './quiz';
 import { QuestionsComponent } from '../questions/questions.component';
+import { categoriesDictionary } from '../categoriesDictionary';
 
 
 @Component({
@@ -13,8 +14,9 @@ import { QuestionsComponent } from '../questions/questions.component';
 export class QuizComponent {
 
   public quiz: Quiz;
-  category : any;
-  amountOfQuestions : any;
+  public category : any;
+  public amountOfQuestions : any;
+  public selectedCategory: any;
 
   constructor(private quizService: QuizService, private viewContainer: ViewContainerRef){
     this.quiz = new Quiz();
@@ -22,18 +24,16 @@ export class QuizComponent {
   }
 
   onQuizCreate(quiz:Quiz){
-    console.log(quiz);
+    // console.log(quiz);
     this.quizService.postQuizdetails(quiz);   
-    this.category =  this.quizService.setCategory(quiz);
+    this.quizService.setCategory(quiz);
     this.amountOfQuestions =  this.quizService.setAmountOfQuestions(quiz);
+    
   }
 
   startQuiz(){
     this.viewContainer.createComponent(QuestionsComponent);
     
-  }
-
- 
-  
+  }  
  
 }
