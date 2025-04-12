@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Injectable, OnInit, Input } from '@angular/core';
 import { QuizService } from '../quiz.service';
 import { Question } from './question';
+import { elementAt } from 'rxjs';
 
 @Injectable({
   providedIn: 'any',
@@ -13,13 +14,15 @@ import { Question } from './question';
 })
 export class QuestionsComponent implements OnInit{
 
-  public questions: Question[] | undefined;
+  public questions: Array<Question> = [];
   public amountOfQuestions: any;
   public category:any;
   public intervalId : any;
   public minutes : any ='0'+0;
   public seconds : any='0'+0; 
   public quizDuration : number= 0;
+  public questionId : number = 0;
+  public questionDetails: any;
 
   
   constructor(private quizService: QuizService) {  }
@@ -28,9 +31,10 @@ export class QuestionsComponent implements OnInit{
     this.getAllQuestions();
     this.startTimer();
     this.category = this.quizService.getCategory();
-    // console.log(" this.category : " +  this.category);
     this.amountOfQuestions = this.quizService.getAmountOfQuestions();
+     
   }
+
 
   public getAllQuestions(): void{
     this.quizService.getAllQuestions().subscribe(
@@ -40,8 +44,24 @@ export class QuestionsComponent implements OnInit{
       (error: HttpErrorResponse) => {
         alert(error.message);
       }
-    )    
+    ) 
+    this.printArrayOfQuestions(); 
   }
+
+
+  public printArrayOfQuestions(): void{
+    this.quizService.getAllQuestions().subscribe(
+      (response: Question[]) =>{
+        response.forEach((question : Question) => {          
+         console.log("array of questions : " + question.question)
+        })      
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    ) 
+  }
+
 
   public startTimer(): void{
     this.intervalId = setInterval(() => {
@@ -59,9 +79,11 @@ export class QuestionsComponent implements OnInit{
     }, 1000);
   }
 
+
   public stopTimer() {
       clearInterval(this.intervalId); 
   }
+
 
   public checkIfTimeEnds(){
     if(this.amountOfQuestions == this.quizDuration){

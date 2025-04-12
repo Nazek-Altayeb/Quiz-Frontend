@@ -17,8 +17,11 @@ export class QuizService {
   private apiUrl=environment.apiBaseUrl;
   public category : any;
   private amountOfQuestions: any;
-
+  private questionId: any;
+  private data: any;
   public quizDetails: Quiz = new Quiz;
+  public questionsArray: Array<Question> = [];
+
 
   constructor(private http: HttpClient) { }
 
@@ -30,7 +33,7 @@ export class QuizService {
    
   } 
 
-  public getAllQuestions(): Observable<Question[]>{       
+  public getAllQuestions(): Observable<Question[]>{   
          return this.http.get<Question[]>(`${this.apiUrl}/quiz/allQuestions`)
   }
 
