@@ -45,24 +45,11 @@ export class QuestionsComponent implements OnInit{
         alert(error.message);
       }
     ) 
-    this.printArrayOfQuestions(); 
+    this.quizService.printArrayOfQuestionsIncorrectAndAnswers(); 
   }
 
 
-  public printArrayOfQuestions(): void{
-    this.quizService.getAllQuestions().subscribe(
-      (response: Question[]) =>{
-        response.forEach((question : Question) => {          
-         console.log("array of questions : " + question.question)
-        })      
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    ) 
-  }
-
-
+  
   public startTimer(): void{
     this.intervalId = setInterval(() => {
       this.checkIfTimeEnds(); 

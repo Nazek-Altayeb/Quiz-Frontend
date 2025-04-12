@@ -21,6 +21,8 @@ export class QuizService {
   private data: any;
   public quizDetails: Quiz = new Quiz;
   public questionsArray: Array<Question> = [];
+  public incorrectAnswers: string[] = [];
+  public correctAnswer: string= '';
 
 
   constructor(private http: HttpClient) { }
@@ -36,6 +38,39 @@ export class QuizService {
   public getAllQuestions(): Observable<Question[]>{   
          return this.http.get<Question[]>(`${this.apiUrl}/quiz/allQuestions`)
   }
+
+  public printArrayOfQuestionsIncorrectAndAnswers(): void{
+    this.getAllQuestions().subscribe(
+      (response: Question[]) =>{
+        response.forEach((question : Question) => {    
+          this.incorrectAnswers = question.incorrect_answers;  
+          this.correctAnswer = question.correct_answer;   
+         console.log("question : " + question.question)
+         console.log("incorrect_answers: " + this.incorrectAnswers)
+         console.log("correct_answers: " + this.correctAnswer)
+        })      
+      }
+    ) 
+  }
+
+  public displayAnswerOptions(): void{
+
+  }
+
+  public checkSelectedAnswer(): void{
+
+  }
+
+  public displayNextQuestion(): void{
+
+  }
+
+  public increaseCorrectOrIncorrectCounter(): void{
+
+  }
+
+
+
 
   public setCategory(quiz:Quiz){
     this.category = categoriesDictionary.get(quiz.category)
