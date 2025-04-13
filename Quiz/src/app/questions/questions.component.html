@@ -17,20 +17,23 @@
               </h3>
               <hr />
             </div>
-            <div *ngFor="let question of questions">
+            <!--<div *ngFor="let question of questions">-->
+            <div>              
               <div class="body">
-                <div class="question" id="question">
+                <div [innerText]="this.ques" class="question" id="question">
                   <!--Question will be inserted here from the api -->
-                  {{question.question}}
+                  <!--{{question.question}}-->
                 </div>
+               <!--
                 <div class="questions-number">
                   <span id="question-counter"></span>/<span
                     id="question-sum"
                   ></span>
                 </div>
-                <div class="answers">
+                --> 
+                <div  [innerText]="this.ans" class="answers" id="answers">
                   <!-- 4 answers will be inserted here from the api  -->
-                   {{question.correct_answer}}
+                  <!--{{question.correct_answer}}-->
                 </div>
                 <div id="alert"></div>
               </div>

@@ -39,7 +39,7 @@ export class QuizService {
          return this.http.get<Question[]>(`${this.apiUrl}/quiz/allQuestions`)
   }
 
-  public printArrayOfQuestionsIncorrectAndAnswers(): void{
+  public DisplayQuestionsAndAnswerOptions(): void{
     this.getAllQuestions().subscribe(
       (response: Question[]) =>{
         response.forEach((question : Question) => {    
@@ -53,9 +53,13 @@ export class QuizService {
     ) 
   }
 
-  public displayAnswerOptions(): void{
-
+  public htmlDecode(input: string){
+    let parsedText = new DOMParser().parseFromString(input, "text/html");
+      return parsedText.documentElement.textContent;
+   
   }
+
+
 
   public checkSelectedAnswer(): void{
 
