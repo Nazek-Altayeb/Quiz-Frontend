@@ -35,8 +35,7 @@ export class QuestionsComponent implements OnInit{
   constructor(private quizService: QuizService) {  }
 
   ngOnInit(): void {
-   // this.getAllQuestions();
-   //this.dislayQuizData(); 
+  
     this.startTimer();
     this.category = this.quizService.getCategory();
     this.amountOfQuestions = this.quizService.getAmountOfQuestions();
@@ -55,19 +54,17 @@ export class QuestionsComponent implements OnInit{
     ) 
   }*/
 
-  public dislayQuizData(): void{
+  /**public dislayAllQuestions(): void{
     this.quizService.getAllQuestions().subscribe(
       (questions: Question[]) =>{
         questions.forEach((question : Question) => {   
-          /**
-           * create a question-answers elemnt, then append the data. 
-           */
          this.displayQuestionAndAnswers(question);
              
         })      
       }
     ) 
-  }
+  }*/
+
 
   public getOneQuestionAtAtime(){
     
@@ -75,10 +72,10 @@ export class QuestionsComponent implements OnInit{
       (questions: Question[]) =>{
       let length = questions.length;
       let iterator = 0;
-       console.log("question key : " + Object.keys(questions)[iterator])  
+       // console.log("question key : " + Object.keys(questions)[iterator])  
        this.displayQuestionAndAnswers(questions[iterator])
        /**
-        * while(submit answer button is clicked  && not all questions are answered){
+        * while(submitAnswer button is not clicked  && not all questions are answered){
               display the next question
         }         
         *  */ 
