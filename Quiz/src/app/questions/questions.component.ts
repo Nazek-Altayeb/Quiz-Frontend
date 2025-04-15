@@ -36,11 +36,11 @@ export class QuestionsComponent implements OnInit{
 
   ngOnInit(): void {
    // this.getAllQuestions();
-   this.dislayQuizData(); 
+   //this.dislayQuizData(); 
     this.startTimer();
     this.category = this.quizService.getCategory();
     this.amountOfQuestions = this.quizService.getAmountOfQuestions();
-         
+    this.getOneQuestionAtAtime();   
   }
 
 
@@ -68,6 +68,24 @@ export class QuestionsComponent implements OnInit{
       }
     ) 
   }
+
+  public getOneQuestionAtAtime(){
+    
+    this.quizService.getAllQuestions().subscribe(
+      (questions: Question[]) =>{
+      let length = questions.length;
+      let iterator = 0;
+       console.log("question key : " + Object.keys(questions)[iterator])  
+       this.displayQuestionAndAnswers(questions[iterator])
+       /**
+        * while(submit answer button is clicked  && not all questions are answered){
+              display the next question
+        }         
+        *  */ 
+      }
+    ) 
+  }
+  
 
   public displayQuestionAndAnswers(question :Question){
     /**
