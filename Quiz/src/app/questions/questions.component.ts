@@ -20,7 +20,7 @@ export class QuestionsComponent implements OnInit{
   public intervalId : any;
   public minutes : any ='0'+0;
   public seconds : any='0'+0; 
-  public quizDuration : number= 0;
+  public spentTime : number= 0;
   public questionId : number = 0;
   public questionDetails: any;
   public incorrectAnswers: string[] = [];
@@ -73,7 +73,7 @@ export class QuestionsComponent implements OnInit{
       let length = questions.length;
       let iterator = 0;
        // console.log("question key : " + Object.keys(questions)[iterator])  
-       this.displayQuestionAndAnswers(questions[iterator])
+       this.createQuestionAndAnswersElements(questions[iterator])
        /**
         * while(submitAnswer button is not clicked  && not all questions are answered){
               display the next question
@@ -84,7 +84,7 @@ export class QuestionsComponent implements OnInit{
   }
   
 
-  public displayQuestionAndAnswers(question :Question){
+  public createQuestionAndAnswersElements(question :Question){
     /**
      * create a question elemnt, then append the question. 
      */
@@ -127,7 +127,7 @@ export class QuestionsComponent implements OnInit{
       
       if(this.seconds == 60){              
         this.minutes++;  
-        this.quizDuration = this.minutes;            
+        this.spentTime = this.minutes;            
         this.minutes = this.minutes < 10 ? '0' + this.minutes : this.minutes;
         this.seconds = '0'+ 0;
       }    
@@ -142,7 +142,7 @@ export class QuestionsComponent implements OnInit{
 
 
   public checkIfTimeEnds(){
-    if(this.amountOfQuestions == this.quizDuration){
+    if(this.amountOfQuestions == this.spentTime){
       this.stopTimer();
     }
   }
