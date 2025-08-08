@@ -88,12 +88,12 @@ The backend project, including API design and ERD (Entity Relationship Diagram),
 Each requirement is prioritized using the MoSCoW method, and progress is tracked accordingly.
 
 ## Requirement 1: Core Quiz Functionality
-    - [x] [Environment setup] <code style="color:red">(Must have)</code>
-    - [x] [Implement quiz configuration form] <code style="color:red">(Must have)</code>
-    - [x] [Create QuizComponent and input binding] <code style="color:red">(Must have)</code>
-    - [x] [Create QuestionComponent to display each question] <code style="color:red">(Must have)</code>
-    - [x] [Develop service to send user inputs to backend] <code style="color:red">(Must have)</code>
-    - [x] [Fetch questions from backend and render in UI] <code style="color:red">(Must have)</code>
+  - [x] [Environment setup] <code style="color:red">(Must have)</code>
+  - [x] [Implement quiz configuration form] <code style="color:red">(Must have)</code>
+  - [x] [Create QuizComponent and input binding] <code style="color:red">(Must have)</code>
+  - [x] [Create QuestionComponent to display each question] <code style="color:red">(Must have)</code>
+  - [x] [Develop service to send user inputs to backend] <code style="color:red">(Must have)</code>
+  - [x] [Fetch questions from backend and render in UI] <code style="color:red">(Must have)</code>
 
 ## Requirement 2: Quiz Logic & Timer
  - [] [Display questions sequentially with countdown timers] <code style="color:red">(Must have)</code>
